@@ -18,8 +18,3 @@ class_name = "IncidentWarRoom"
 [[migrations]]
 tag = "v1"
 new_sqlite_classes = ["IncidentWarRoom"]
-
-[[workflows]]
-name = "incident-triage-workflow"
-binding = "TRIAGE_WORKFLOW"
-class_name = "IncidentTriageWorkflow"

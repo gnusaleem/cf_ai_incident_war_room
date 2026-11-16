@@ -1,6 +1,5 @@
 import { Env } from "./types";
 export { IncidentWarRoom } from "./war-room-do";
-export { IncidentTriageWorkflow } from "./triage-workflow";
 
 export default {
   async fetch(request: Request, env: Env): Promise<Response> {

@@ -1,7 +1,6 @@
 export interface Env {
   AI: Ai;
   WAR_ROOM: DurableObjectNamespace<import("./war-room-do").IncidentWarRoom>;
-  TRIAGE_WORKFLOW: Workflow;
 }
 
 export type Hypothesis = {
@@ -18,6 +17,14 @@ export type TimelineEvent = {
   author: "user" | "commander-ai" | "workflow";
   type: "chat" | "log_dump" | "voice_note" | "status" | "postmortem";
   content: string;
+};
+
+export type WorkflowRunRecord = {
+  run_id: string;
+  mode: "analyze_logs" | "postmortem";
+  step_name: string;
+  status: "running" | "completed" | "failed";
+  updated_at: string;
 };
 
 export type ClientMessage =
