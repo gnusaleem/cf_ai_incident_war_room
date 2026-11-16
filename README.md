@@ -1,6 +1,3 @@
-# cf_ai_incident_war_room
-Real-time AI incident war room built on Cloudflare Workers AI (Llama 3.3 &amp; Whisper), Durable Objects (SQLite + WebSockets), Cloudflare Workflows, and Pages.
-
 # 🚨 Live Incident Commander & Log War Room (`cf_ai_incident_war_room`)
 
 A real-time, stateful AI incident response workspace built on Cloudflare's developer platform. Engineers collaborate in shared incident rooms via live WebSocket chat, push-to-talk voice notes, or raw crash log dumps while an AI Incident Commander tracks hypotheses, orchestrates multi-step log triage pipelines, and drafts executive post-mortems.
