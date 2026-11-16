@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Cloudflare Incident War Room</title>
+  <style>
+    body { font-family: system-ui, sans-serif; background: #0d1117; color: #e6edf3; margin: 0; display: grid; grid-template-columns: 2fr 1fr; height: 100vh; }
+    .pane { padding: 16px; display: flex; flex-direction: column; border-right: 1px solid #30363d; overflow: hidden; }
+    #timeline { flex: 1; overflow-y: auto; display: flex; flex-direction: column; gap: 10px; padding-right: 8px; }
+    .event { padding: 10px 12px; border-radius: 6px; background: #161b22; border-left: 3px solid #58a6ff; white-space: pre-wrap; font-size: 14px; }
+    .event.commander-ai { border-left-color: #f78166; }
+    .event.workflow { border-left-color: #3fb950; font-family: monospace; font-size: 12px; }
+    .controls { display: flex; gap: 8px; margin-top: 12px; }
+    input, textarea, button { background: #161b22; color: #e6edf3; border: 1px solid #30363d; border-radius: 6px; padding: 8px 12px; }
+    button { cursor: pointer; background: #238636; border-color: #2ea043; font-weight: 600; }
+    button.secondary { background: #21262d; border-color: #30363d; }
+    .hyp-card { background: #161b22; border: 1px solid #30363d; border-radius: 6px; padding: 10px; margin-bottom: 10px; }
+    .badge { font-size: 11px; padding: 2px 6px; border-radius: 4px; background: #1f6feb; text-transform: uppercase; }
+  </style>
+</head>
+<body>
+  <div class="pane">
+    <div style="display:flex; justify-content:space-between; align-items:center;">
+      <h2>🚨 Live Incident War Room</h2>
+      <button class="secondary" id="postmortemBtn">Generate Post-Mortem</button>
+    </div>
+    <div id="timeline"></div>
+    <div class="controls">
+      <input id="chatInput" style="flex:1" placeholder="Send update or ask Incident Commander..." />
+      <button id="sendBtn">Send</button>
+      <button class="secondary" id="voiceBtn">🎙️ Hold to Speak</button>
+    </div>
+  </div>
+
+  <div class="pane" style="border-right:none;">
+    <h3>🧠 Active Root-Cause Hypotheses</h3>
+    <div id="hypotheses" style="flex:1; overflow-y:auto;"></div>
+    <h4>📋 Paste Crash Log / Stack Trace</h4>
+    <textarea id="logInput" rows="6" placeholder="Paste kernel panic, stack trace, or error logs..."></textarea>
+    <button id="analyzeLogBtn" style="margin-top:8px;">Run Workflow Log Triage</button>
+  </div>
+
+  <script src="/app.js"></script>
+</body>
+</html>
